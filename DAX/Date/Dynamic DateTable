@@ -1,4 +1,5 @@
-Date = -- basic date table with dynamic date range based on Table1
+-- basic date table with dynamic date range based on Table1
+Date = 
 ADDCOLUMNS (
 CALENDAR (min([Table1]), max([Table1])),
 "DateAsInteger", FORMAT ( [Date], "YYYYMM" ),
