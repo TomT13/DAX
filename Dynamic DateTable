@@ -1,0 +1,13 @@
+Date = -- basic date table with dynamic date range based on Table1
+ADDCOLUMNS (
+CALENDAR (min([Table1]), max([Table1])),
+"DateAsInteger", FORMAT ( [Date], "YYYYMM" ),
+"Year", YEAR ( [Date] ),
+"Monthnumber", FORMAT ( [Date], "MM" ),
+"YearMonthnumber", FORMAT ( [Date], "YYYY/MM" ),
+"YearMonthShort", FORMAT ( [Date], "YYYY/mmm" ),
+"MonthNameLong", FORMAT ( [Date], "mmmm" ),
+"DayOfWeekNumber", WEEKDAY ( [Date] ),
+"DayOfWeek", FORMAT ( [Date], "dddd" ),
+"Quarter", "Q" & FORMAT ( [Date], "Q" )
+)
