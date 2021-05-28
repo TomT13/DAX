@@ -1,5 +1,5 @@
-YTDTotal = CALCULATE([Totals], -- Current year and up to current Date (Period)
+-- Current year and up to current Date (Period)
+YTDTotal = CALCULATE([Totals],
     filter(
-        all('Date'),'Date'[FiscalYear]=max('Date'[FiscalYear])
-        &&
-        'Date'[FiscalPeriod]<=max('Date'[FiscalPeriod])))
+        all('Date'),'Date'[FiscalYear]=max('Date'[FiscalYear]) && 
+                    'Date'[FiscalPeriod]<=max('Date'[FiscalPeriod])))
