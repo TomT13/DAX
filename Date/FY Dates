@@ -1,0 +1,4 @@
+-- Fiscal Date and Fiscal Period (March EoY) 
+FYDate = DATEADD('Date'[Date],+9,month)
+FiscalPeriod = FORMAT('Date'[FYDate],"YYYYMM")
+FiscalYr = FORMAT('Date'[FYDate],"YYYY")
