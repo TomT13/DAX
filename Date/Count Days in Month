@@ -1,1 +1,4 @@
-DaysInMonth= CALCULATE(COUNTROWS('Date'), all('Date'), VALUES('Date'[MonthYear]))
+-- Counts days in month ignoring any date filters
+DaysInMonth = CALCULATE(
+                COUNTROWS('Date'), all('Date'),
+                  VALUES('Date'[MonthYear]))
