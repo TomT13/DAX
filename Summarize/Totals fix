@@ -1,0 +1,5 @@
+-- Summarize with SUMX over table to show accurate totals for [Measure1] 
+TotalsFix = 
+        SUMX(
+            SUMMARIZE(Table1,Table1[Column1], Table1[Column2], Table1[Column3]),
+                [Measure1])
