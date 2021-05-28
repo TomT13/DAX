@@ -1,0 +1,1 @@
+DaysInMonth= CALCULATE(COUNTROWS('Date'), all('Date'), VALUES('Date'[MonthYear]))
