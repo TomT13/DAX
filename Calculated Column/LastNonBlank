@@ -1,0 +1,5 @@
+-- This will show Non-blank value from [Column1] where [Reference] matches [Reference] of that row. 
+=CALCULATE(
+    LASTNONBLANK(Table1[Column1],1),
+        filter(all(Table1),
+          Table1[Reference]=EARLIER(Table1[Reference])))
