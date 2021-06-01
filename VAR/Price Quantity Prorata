@@ -1,0 +1,10 @@
+-- This is a fixed price (monthly) over a variable quantity calculation
+
+PriceQuantityProrata = 
+	VAR Calc1 = CALCULATE(sum(Table1[Price]))
+	VAR Calc2 = CALCULATE(COUNTROWS('Date'), ALL('Date'),VALUES('Date'[MonthYear]))
+	VAR Calc3 = DIVIDE(Calc1,Calc2,0)
+	VAR Calc4 = CALCULATE('Key Measures'[Quantity] / 24)
+ 
+Return
+	if('Key Measures'[Quantity] > 0 ,(Calc3 * Calc4), BLANK())
