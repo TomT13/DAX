@@ -1,3 +1,1 @@
-- Hi, I’m @TomT13
-- I’m interested in DAX, SQL and M
-- I have a huge interst in Power BI, Power Query M and SQL
+
