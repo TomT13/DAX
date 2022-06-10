@@ -1,1 +1,12 @@
+-- TOPN Expression below works well to get top 1 result of value in Column1 based on Measure1 IF top value is unique.
 
+   TOPN( 1, ALL('Table1'[Column1]), [Measure1], DESC))
+
+-- When trying to get bottom 1 result of same setup as above only switching DESC to ASC will not work if there are 
+   multiple null or zero values in Measure1 calculation.
+
+-- One solution here is to use inverse of Measure1 (1 / [Measure1]) then use same TOPN expression as above
+
+   TOPN( 1, ALL('Table1'[Column1]), ( 1 / [Measure1]) , DESC))
+   
+-- This won't affect the null and zero values but the next smallest will now be the biggest and will therefore be picked up!
